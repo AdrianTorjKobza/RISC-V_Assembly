@@ -3,7 +3,6 @@ prompt_number1: .asciiz "Enter the first number: "
 prompt_number2: .asciiz "Enter the second number: "
 prompt_operation: .asciiz "Choose operation:\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n"
 result_msg: .asciiz "Result: "
-newline: .asciiz "\n"
 .text
 .global main
 
