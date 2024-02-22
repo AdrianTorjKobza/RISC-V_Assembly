@@ -18,7 +18,7 @@ main:
     # Capture the second number from user.
     li $v0, 4                    # Load system call code for printing string.
     la $a0, prompt_number2       # Load address of prompt_number2 into $a0.
-    syscall                      # Print prompt_number1 string.
+    syscall                      # Print prompt_number2 string.
     li $v0, 5                    # Load system call code for printing string.
     syscall                      # Read the second number.
     move $s1, %v0                # Save the second number in $s1.
