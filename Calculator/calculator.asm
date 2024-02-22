@@ -8,13 +8,13 @@ newline: .asciiz "\n"
 .global main
 
 main:
-	# Capture the first number from user.
-	li $v0, 4                  # Load system call code for printing string.
-    la $a0, prompt_number1     # Load address of prompt_number1 into $a0.
-    syscall                    # Print prompt_number1 string.
-    li $v0, 5                  # Load system call code for printing string.
-    syscall                    # Read the first number.
-    move $s0, %v0              # Save the first number in $s0.
+    # Capture the first number from user.
+    li $v0, 4                    # Load system call code for printing string.
+    la $a0, prompt_number1       # Load address of prompt_number1 into $a0.
+    syscall                      # Print prompt_number1 string.
+    li $v0, 5                    # Load system call code for printing string.
+    syscall                      # Read the first number.
+    move $s0, %v0                # Save the first number in $s0.
     
     # Capture the second number from user.
     li $v0, 4                    # Load system call code for printing string.
@@ -43,7 +43,7 @@ main:
     beq $s2, $t0, division       # Trigger the division if choice is 3.
     
 addition:
-	# Perform addition.
+    # Perform addition.
     add $s3, $s0, $s1            # Add the first and second number.
     j print_result               # Jump to print_result.
     
@@ -64,8 +64,8 @@ division:
     j print_result               # Jump to print_result.
     
 print_result:
-	# Print the result.
-	li $v0, 4                    # Load system call code for printing string.
+    # Print the result.
+    li $v0, 4                    # Load system call code for printing string.
     la $a0, result_msg           # Load address of result into $a0.
     syscall                      # Print result_msg.
     li $v0, 1                    # Load system call code for printing integer.
@@ -74,6 +74,6 @@ print_result:
     j exit                       # Jump to exit.
     
 exit:
-	# Exit program.
+    # Exit program.
     li $v0, 10                   # Load system call code for exit.
     syscall                      # Exit program.
