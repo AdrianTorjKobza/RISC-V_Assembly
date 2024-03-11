@@ -24,7 +24,7 @@ cont:   # end if
     sb    x7, 0(x5)             # Store character to output string.
     addi  x5, x5, 1             # Increment the memory address by 1. Increment buffer for the next character.
     li    x28, 0                # load 0 character for comparison.
-    bne   x7, x28, loop         # Loop if character isn't null: \0. (If we didn't reach the end of input string)
+    bne   x7, x28, loop         # Loop if character isn't null: \0. (If we didn't reach the end of string)
 
     # Print the upper-case output string.
     li    a0, 1                 # Load the StdOut (1) function.
