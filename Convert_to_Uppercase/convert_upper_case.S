@@ -20,7 +20,7 @@ loop:
 
     addi  x7, x7, ('A'-'a')     # Convert lower-case character to upper-case character.
 
-cont:   # end if
+cont:
     sb    x7, 0(x5)             # Store character to output string.
     addi  x5, x5, 1             # Increment the memory address by 1. Increment buffer for the next character.
     li    x28, 0                # load 0 character for comparison.
